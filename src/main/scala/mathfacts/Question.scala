@@ -1,12 +1,8 @@
 package mathfacts
 
-object OpType extends Enumeration {
-  type OpType = Value
-  val Plus, Minus, Times = Value
-}
-import OpType._
+import mathfacts.OpType._
 
-class Question(val opType: OpType, val value1: Int, val value2: Int) {
+case class Question(opType: OpType, value1: Int, value2: Int) {
   def answer: Int = opType match {
     case Plus => value1 + value2
     case Minus => value1 - value2
